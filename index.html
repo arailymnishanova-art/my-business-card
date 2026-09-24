@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менің визитка сайтым</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f3ea;
+            color: #344236;
+        }
+
+        header {
+            background: #344236;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            background: white;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid #c49a5a;
+            border-radius: 8px;
+        }
+
+        button {
+            background: #c49a5a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #344236;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .cards {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Менің визитка сайтым</h1>
+
+    <nav>
+        <a href="#about">Мен туралы</a>
+        <a href="#hobby">Қызығушылықтарым</a>
+        <a href="#contact">Байланыс</a>
+    </nav>
+</header>
+
+<main>
+
+    <section id="about">
+        <h2>Мен туралы</h2>
+        <p>Сәлем! Менің атым Арайлым.</p>
+        <p>Мен университет студентімін және веб-технологияларға қызығамын.</p>
+
+        <button onclick="showMessage()">Мені бас</button>
+        <p id="message"></p>
+    </section>
+
+    <section id="hobby">
+        <h2>Қызығушылықтарым</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Бағдарламалау</h3>
+                <p>HTML, CSS және JavaScript үйреніп жүрмін.</p>
+            </div>
+
+            <div class="card">
+                <h3>Музыка</h3>
+                <p>Музыка тыңдағанды ұнатамын.</p>
+            </div>
+
+            <div class="card">
+                <h3>Кино</h3>
+                <p>Фильмдер мен сериалдар көргенді ұнатамын.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Байланыс</h2>
+        <p>Маған хабарласу үшін төмендегі батырманы басыңыз.</p>
+
+        <button onclick="showContact()">Байланыс</button>
+        <p id="contactMessage"></p>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Менің визитка сайтым</p>
+</footer>
+
+<script>
+    function showMessage() {
+        document.getElementById("message").textContent =
+            "Сәлем! Сайтқа қош келдіңіз!";
+    }
+
+    function showContact() {
+        document.getElementById("contactMessage").textContent =
+            "Рақмет! Байланыс бөліміне қош келдіңіз!";
+    }
+</script>
+
+</body>
+</html>
