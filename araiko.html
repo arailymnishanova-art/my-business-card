@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менің визитка сайтым</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff0f5;
+            color: #6b1e3b;
+        }
+        header {
+            background: #800020;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            background: #d66a8a;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+        }
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .card-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+            border: 1px solid #d66a8a;
+            border-radius: 10px;
+        }
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #800020;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #a8325a;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #d66a8a;
+            border-radius: 8px;
+        }
+        footer {
+            background: #800020;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        /* Адаптивтілік */
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+            section {
+                margin: 15px;
+                padding: 20px;
+            }
+            .card-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Менің визитка сайтым</h1>
+        <p>Студент | Digital технологиялар</p>
+    </header>
+    <nav>
+        <a href="#about">Өзім жайлы</a>
+        <a href="#hobby">Қызығушылықтарым</a>
+        <a href="#contact">Байланыс</a>
+    </nav>
+    <section id="about">
+        <div class="about">
+            <div class="about-text">
+                <h2>Өзім жайлы</h2>
+                <p>
+                    Сәлем! Менің есімім Арайлым.
+                    Мен Қазақ ұлттық қыздар педагогикалық университетінің 3-курс студентімін.
+                    Мен IT мамандығында яғни цифрлық технологиялар саласында білім алып оқып жүрмін.
+                </p>
+                <p>
+                    Бос уақытта музыка тыңдағанды,
+                    фильм қарағанды ұнатамын.
+                </p>
+                <button onclick="showMessage()">
+                    Мені басып көр
+                </button>
+                <p id="message"></p>
+            </div>
+        </div>
+    </section>
+    <section id="hobby">
+        <h2>Қызығушылықтарым</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>💻 IT</h3>
+                <p>
+                    Веб-сайттар жасауды,
+                    бағдарламалауды үйреніп жүрмін.
+                </p>
+            </div>
+            <div class="card">
+                <h3>🎵 Музыка</h3>
+                <p>
+                    Бос уақытымда музыка тыңдағанды
+                    ұнатамын.
+                </p>
+            </div>
+            <div class="card">
+                <h3>📚 Білім</h3>
+                <p>
+ Мамандығым IT саласымен байланысты болғандықтан, компьютермен жасайтын жұмыстар маңызды
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Байланыс</h2>
+        <p>Маған хабарлама қалдырыңыз:</p>
+        <input
+            type="text"
+            id="name"
+            placeholder="Атыңызды енгізіңіз"
+        >
+        <button onclick="sendMessage()">
+            Жіберу
+        </button>
+        <p id="result"></p>
+    </section>
+    <footer>
+        <p>© 2026 Арайлым | Менің визитка сайтым</p>
+    </footer>
+    <script>
+        function showMessage() {
+            document.getElementById("message").textContent =
+                "Сайтқа кіргеніңізге рақмет! 💗";
+        }
+        function sendMessage() {
+            let name = document.getElementById("name").value;
+            if (name.trim() === "") {
+                document.getElementById("result").textContent =
+                    "Атыңызды енгізіңіз.";
+            } else {
+                document.getElementById("result").textContent =
+                    "Рақмет, " + name + "! 💗";
+            }
+        }
+    </script>
+</body>
+</html>
